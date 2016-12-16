@@ -51,7 +51,7 @@ This means any change to your static code is automatically reloaded, or cache-bu
 With debug mode turned on, file names and line numbers are preserved while still running the compression flow::
 
     <script type="text/javascript" src="/static/sdist/93a97ef5491b84db5155916be8f8fd7f-config.js"></script>
-    <script type="text/javascript" src="/static/sdist/a041936b125a3ec4ce9bf7a83130157d-app.js"></script>
+    <script type="text/javascript" src="/static/sdist/af77fa42b92bb5a1ef85d9eb773d608e-app.js"></script>
 
 The ``type`` attribute is used to decide which compressor to use for the asset.
 
