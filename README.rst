@@ -70,9 +70,9 @@ Configuration
 
 ``COMPRESSOR_DEBUG`` Default: False
 
-``COMPRESSOR_OUTPUT_DIR`` Default: app.static_folder
+``COMPRESSOR_OUTPUT_DIR`` Default: app.static_folder + '/sdist'
 
-``COMPRESSOR_STATIC_PREFIX`` Default: app.static_url_path
+``COMPRESSOR_STATIC_PREFIX`` Default: app.static_url_path + '/sdist'
 
 ``COMPRESSOR_CLASSES`` Default::
 
