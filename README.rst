@@ -44,7 +44,7 @@ Is turned into::
 
     <script type="text/javascript" src="/static/sdist/a041936b125a3ec4ce9bf7a83130157d.js"></script>
 
-The compressed ``a041936b125a3ec4ce9bf7a83130157d.js`` contains both ``app.js`` and ``config.js`` combined for improved performance.
+The compressed ``a041936b125a3ec4ce9bf7a83130157d.js`` contains both ``app.js`` and ``config.js`` combined for faster page loading.
 The file name is calculated based on the contents of ``app.js`` and ``config.js``.
 This means any change to your static code is automatically reloaded, or cache-busted, in browsers.
 
