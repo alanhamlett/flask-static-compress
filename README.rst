@@ -45,7 +45,7 @@ Is turned into::
     <script type="text/javascript" src="/static/sdist/a041936b125a3ec4ce9bf7a83130157d.js"></script>
 
 The compressed ``a041936b125a3ec4ce9bf7a83130157d.js`` contains both ``app.js`` and ``config.js`` combined for improved performance.
-The file name is calculated based on the contents of ``app.js`` and ``config.coffee``.
+The file name is calculated based on the contents of ``app.js`` and ``config.js``.
 This means any change to your static code is automatically reloaded, or cache-busted, in browsers.
 
 With debug mode turned on, file names and line numbers are preserved while still running the compression flow::
