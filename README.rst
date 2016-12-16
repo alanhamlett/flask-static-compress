@@ -36,22 +36,22 @@ All static assets inside a ``compress`` block are compressed into a single file,
 For example::
 
     {% compress 'js' %}
-      <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
       <script type="text/javascript" src="{{ STATIC_URL }}js/config.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
     {% endcompress %}
 
 Is turned into::
 
     <script type="text/javascript" src="/static/sdist/a041936b125a3ec4ce9bf7a83130157d.js"></script>
 
-The compressed `a041936b125a3ec4ce9bf7a83130157d.js` contains both `app.js` and `config.js` combined for improved performance.
-The file name is calculated based on the contents of `app.js` and `config.coffee`.
+The compressed ``a041936b125a3ec4ce9bf7a83130157d.js`` contains both ``app.js`` and ``config.js`` combined for improved performance.
+The file name is calculated based on the contents of ``app.js`` and ``config.coffee``.
 This means any change to your static code is automatically reloaded, or cache-busted, in browsers.
 
 With debug mode turned on, file names and line numbers are preserved while still running the compression flow::
 
-    <script type="text/javascript" src="/static/sdist/a041936b125a3ec4ce9bf7a83130157d-app.js"></script>
     <script type="text/javascript" src="/static/sdist/93a97ef5491b84db5155916be8f8fd7f-config.js"></script>
+    <script type="text/javascript" src="/static/sdist/a041936b125a3ec4ce9bf7a83130157d-app.js"></script>
 
 The ``type`` attribute is used to decide which compressor to use for the asset.
 
