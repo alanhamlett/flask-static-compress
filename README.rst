@@ -59,6 +59,59 @@ Use `offline compression <https://github.com/jaysonsantos/jinja-assets-compresso
 
 Create `custom compressors <https://github.com/jaysonsantos/jinja-assets-compressor#custom-compressors>`_ to support more types of static files.
 
+For example, to remove trailing commas with Prettier then compress with jsmin::
+
+    import errno
+    import subprocess
+    from jac.compat import file, u, utf8_encode
+    from jac.exceptions import InvalidCompressorError
+    from rjsmin import jsmin
+
+
+    class CustomJavaScriptCompressor(object):
+        binary = 'prettier'
+
+        @classmethod
+        def compile(cls, content, mimetype='text/less', cwd=None, uri_cwd=None,
+                    debug=None):
+            if debug:
+                return content
+
+            args = ['--no-config', '--ignore-path', '--trailing-comma', 'none']
+
+            args.insert(0, cls.binary)
+
+            try:
+                handler = subprocess.Popen(args,
+                                           stdout=subprocess.PIPE,
+                                           stdin=subprocess.PIPE,
+                                           stderr=subprocess.PIPE, cwd=None)
+            except OSError as e:
+                msg = '{0} encountered an error when executing {1}: {2}'.format(
+                    cls.__name__,
+                    cls.binary,
+                    u(e),
+                )
+                if e.errno == errno.ENOENT:
+                    msg += ' Make sure {0} is in your PATH.'.format(cls.binary)
+                raise InvalidCompressorError(msg)
+
+            if isinstance(content, file):
+                content = content.read()
+            (stdout, stderr) = handler.communicate(input=utf8_encode(content))
+            stdout = u(stdout)
+
+            if handler.returncode == 0:
+                return jsmin(stdout)
+            else:
+                raise RuntimeError('Error compressing: %s' % stderr)
+
+
+    COMPRESSOR_CLASSES = {
+        'text/javascript': CustomJavaScriptCompressor,
+    }
+
+
 Configuration
 -------------
 
