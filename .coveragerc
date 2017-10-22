@@ -1,4 +1,5 @@
 [run]
+source = flask_static_compress
 branch = true
 omit =
     flask_static_compress/__about__.py
