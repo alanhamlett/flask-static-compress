@@ -59,7 +59,7 @@ Use `offline compression <https://github.com/jaysonsantos/jinja-assets-compresso
 
 Create `custom compressors <https://github.com/jaysonsantos/jinja-assets-compressor#custom-compressors>`_ to support more types of static files.
 
-For example, to remove trailing commas with Prettier then compress with jsmin::
+For example, to remove trailing commas with `Prettier <https://www.npmjs.com/package/prettier>`_ then compress with `jsmin <https://pypi.python.org/pypi/jsmin>`_::
 
     import errno
     import subprocess
