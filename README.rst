@@ -1,6 +1,10 @@
 Flask-Static-Compress
 =====================
 
+.. image:: https://travis-ci.org/alanhamlett/flask-static-compress.svg?branch=master
+    :target: https://travis-ci.org/alanhamlett/flask-static-compress
+    :alt: Tests
+
 Auto-detects your static files for minification, combination, and versioning. Like Django-Compressor for Flask.
 
 
