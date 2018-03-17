@@ -85,7 +85,7 @@ For example, to remove trailing commas with `Prettier <https://www.npmjs.com/pac
             if debug:
                 return content
 
-            args = ['--no-config', '--ignore-path', '--trailing-comma', 'none']
+            args = ['--no-config', '--trailing-comma', 'none']
 
             args.insert(0, cls.binary)
 
