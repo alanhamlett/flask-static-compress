@@ -3,6 +3,12 @@ History
 -------
 
 
+1.0.3 (2020-08-19)
+++++++++++++++++++
+
+- Require jac v0.18 or newer for improved offline compression performance.
+
+
 1.0.2 (2017-10-22)
 ++++++++++++++++++
 
