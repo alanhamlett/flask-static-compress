@@ -133,6 +133,8 @@ Configuration
 
 ``COMPRESSOR_OUTPUT_DIR`` Default: app.static_folder + '/sdist'
 
+``COMPRESSOR_CACHE_DIR`` Default: app.static_folder + '/sdist'
+
 ``COMPRESSOR_STATIC_PREFIX`` Default: app.static_url_path + '/sdist'
 
 ``COMPRESSOR_CLASSES`` Default::
